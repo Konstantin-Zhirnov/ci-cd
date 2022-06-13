@@ -1,6 +1,8 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { render, screen } from '@testing-library/react';
 
+import { store } from '../../redux'
 import { testData } from './mockData'
 import Posts from '../Posts'
 
@@ -9,7 +11,10 @@ describe('<Todos/> UI testing', () => {
   it(`element with testId or 'test-id' should be in document`, () => {
     screen.debug()
     render(
-      <Posts testData={testData}/>,
+      <Provider store={store}>
+        <Posts testData={testData}/>,
+      </Provider>
+      
     )
     const element = screen.getByTestId(testData.testId)
     expect(element).toBeInTheDocument()
@@ -18,7 +23,9 @@ describe('<Todos/> UI testing', () => {
   it(`h1 text content should be 'mockName' or 'Тестовое название статьи'`, () => {
     screen.debug()
     render(
-      <Posts  testData={testData}/>,
+      <Provider store={store}>
+        <Posts  testData={testData}/>
+      </Provider>
     )
     const header = screen.getByTestId(testData.testId)
     expect(header).toHaveTextContent(testData.mockName)

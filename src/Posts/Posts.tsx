@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import {TestDataType, PostType} from '../types'
-import { useGetPostsQuery, useAddPostMutation, useDeletePostMutation } from '../redux'
+import { useGetPostsQuery, useAddPostMutation } from '../redux'
+import Post from './Post'
 
     
 
@@ -9,17 +10,11 @@ interface IProps {
     testData?: TestDataType
 }
 
-const Todos: React.FC<IProps> = ({testData}) => {
-
-  
+const Posts: React.FC<IProps> = ({testData}) => {
 
   const [count, setCount] = useState<string>('')
   const { data, isLoading } = useGetPostsQuery(count);
   const [addPost, {isError}] = useAddPostMutation();
-  const [ deletePost ] = useDeletePostMutation()
-
-  console.log('data', data)
-  console.log('count', count)
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCount(e.target.value)
@@ -34,11 +29,6 @@ const Todos: React.FC<IProps> = ({testData}) => {
       }).unwrap();
   }
 
-  const handleDeletePost = (id: number) => async () => {
-    await deletePost(id).unwrap();
-}
-
-  if (isLoading) return <h1>Loading...</h1>
 
   return (
     <div>
@@ -61,11 +51,11 @@ const Todos: React.FC<IProps> = ({testData}) => {
 
         <ul>
           {
-            data.map((post: PostType) => (<li key={post.id} onClick={handleDeletePost(post.id)}><div><p>{post.title}</p><p>{post.body}</p></div></li>))
+            data?.map((post: PostType) => <Post key={post.id} post={post}/>)
           }
         </ul>
     </div>
   );
 }
 
-export default Todos;
+export default Posts;
