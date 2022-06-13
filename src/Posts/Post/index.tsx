@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import {PostType} from '../../types'
 import { useDeletePostMutation } from '../../redux'

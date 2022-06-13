@@ -13,8 +13,8 @@ interface IProps {
 const Posts: React.FC<IProps> = ({testData}) => {
 
   const [count, setCount] = useState<string>('')
-  const { data, isLoading } = useGetPostsQuery(count);
-  const [addPost, {isError}] = useAddPostMutation();
+  const { data } = useGetPostsQuery(count);
+  const [addPost] = useAddPostMutation();
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCount(e.target.value)
