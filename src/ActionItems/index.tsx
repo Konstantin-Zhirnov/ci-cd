@@ -13,7 +13,7 @@ const ActionItems: React.FC<IProps> = ({testData}) => {
       <h1
           data-testid={testData?.testId || 'article-name'}
         >
-          {testData?.mockName || 'test'}
+          {testData?.mockName || 'ActionItems'}
         </h1>
     </div>
   );
