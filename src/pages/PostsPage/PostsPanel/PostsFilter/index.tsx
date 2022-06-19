@@ -16,7 +16,7 @@ interface IProps {
 }
 
 const PostsFilter: React.FC<IProps> = ({ data, setPosts }) => {
-  const [_, startTransition] = useTransition()
+  const [, startTransition] = useTransition()
 
   const [search, setSearch] = React.useState('')
 
@@ -28,7 +28,7 @@ const PostsFilter: React.FC<IProps> = ({ data, setPosts }) => {
 
   React.useEffect(() => {
     setPosts(filterBySearch(data, search))
-  }, [search])
+  }, [search, setPosts])
 
   return (
     <div className={classes.container}>
