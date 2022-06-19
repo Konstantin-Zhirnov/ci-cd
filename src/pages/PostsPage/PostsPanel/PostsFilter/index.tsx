@@ -7,7 +7,7 @@ import { PostsType } from '../../../../types'
 import classes from './PostsFilter.module.sass'
 
 const filterBySearch = (entities: PostsType, search: string): PostsType => {
-  return entities.filter((item) => item.title.concat(item.body).includes(search))
+  return entities?.filter((item) => item.title.concat(item.body).includes(search))
 }
 
 interface IProps {
