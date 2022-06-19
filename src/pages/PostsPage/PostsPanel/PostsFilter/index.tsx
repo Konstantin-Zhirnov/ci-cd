@@ -28,7 +28,7 @@ const PostsFilter: React.FC<IProps> = ({ data, setPosts }) => {
 
   React.useEffect(() => {
     setPosts(filterBySearch(data, search))
-  }, [search, setPosts])
+  }, [search, setPosts, data])
 
   return (
     <div className={classes.container}>
