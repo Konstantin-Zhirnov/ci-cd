@@ -1,14 +1,16 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-import { PostType } from '../types'
+import { PostType } from '../types/posts.type'
+import { apiConfig } from '../api'
 
 export const postsApi = createApi({
   reducerPath: 'postsApi',
   tagTypes: ['Posts'],
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
+  baseQuery: fetchBaseQuery(),
   endpoints: (build) => ({
     getPosts: build.query({
-      query: (limit) => `posts?${limit && limit !== 'All' && `_start=0&_limit=${limit}`}`,
+      query: (limit) =>
+        `${apiConfig.posts}?${limit && limit !== 'All' && `_start=0&_limit=${limit}`}`,
       providesTags: (result) =>
         result
           ? [
@@ -19,7 +21,7 @@ export const postsApi = createApi({
     }),
     addPost: build.mutation({
       query: (body) => ({
-        url: 'posts',
+        url: apiConfig.posts,
         method: 'POST',
         body,
       }),
@@ -27,7 +29,7 @@ export const postsApi = createApi({
     }),
     deletePost: build.mutation({
       query: (id) => ({
-        url: `posts/${id}`,
+        url: `${apiConfig.posts}/${id}`,
         method: 'DELETE',
       }),
       invalidatesTags: [{ type: 'Posts', id: 'LIST' }],

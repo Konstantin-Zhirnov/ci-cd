@@ -1,22 +1,24 @@
 import React from 'react'
+import cn from 'classnames'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
+import Typography from '@mui/material/Typography/Typography'
 import MenuItem from '@mui/material/MenuItem'
 
 import classes from './PostsPanelSelect.module.sass'
-import Typography from '@mui/material/Typography/Typography'
 
 interface IProps {
   count: string
   setCount: React.Dispatch<React.SetStateAction<string>>
+  isMobile: boolean
 }
 
-const PostsPanelSelect: React.FC<IProps> = ({ count, setCount }) => {
+const PostsPanelSelect: React.FC<IProps> = ({ count, setCount, isMobile }) => {
   const handleChange = (event: SelectChangeEvent) => {
     setCount(event.target.value)
   }
 
   return (
-    <div className={classes.container}>
+    <div className={cn(classes.container, { [classes.mobile]: isMobile })}>
       <Typography>Posts count:</Typography>
       <Select
         labelId="demo-select-small"

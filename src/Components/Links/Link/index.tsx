@@ -1,9 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import { LinkType } from '../../../types'
+import { LinkType } from '../../../types/global.type'
 
-import './Link.sass'
+import classes from './Link.module.sass'
 
 interface IProps {
   link: LinkType
@@ -11,8 +11,10 @@ interface IProps {
 
 const Link: React.FC<IProps> = ({ link }) => {
   return (
-    <li className="Link_li">
-      <NavLink to={link.to}>{link.name}</NavLink>
+    <li className={classes.li}>
+      <NavLink to={link.to} className={({ isActive }) => (isActive ? classes.active : '')}>
+        {link.name}
+      </NavLink>
     </li>
   )
 }

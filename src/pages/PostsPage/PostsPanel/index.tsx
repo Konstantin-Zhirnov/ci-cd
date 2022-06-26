@@ -1,7 +1,9 @@
 import React from 'react'
+import cn from 'classnames'
 import Card from '@mui/material/Card'
 
-import { PostsType } from '../../../types'
+import { useMatchMedia } from '../../../hooks/useMatchMedia'
+import { PostsType } from '../../../types/posts.type'
 
 import PostsPanelSelect from './PostsPanelSelect'
 import PostsFilter from './PostsFilter'
@@ -16,10 +18,12 @@ interface IProps {
 }
 
 const PostsPanel: React.FC<IProps> = ({ count, setCount, data, setPosts }) => {
+  const { isMobile } = useMatchMedia()
+
   return (
-    <Card className={classes.card}>
-      <PostsFilter data={data} setPosts={setPosts} />
-      <PostsPanelSelect count={count} setCount={setCount} />
+    <Card className={cn(classes.card, { [classes.mobile]: isMobile })}>
+      <PostsFilter data={data} setPosts={setPosts} isMobile={isMobile} />
+      <PostsPanelSelect count={count} setCount={setCount} isMobile={isMobile} />
     </Card>
   )
 }

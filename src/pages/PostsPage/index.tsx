@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 
+import { TestDataType } from '../../types/global.type'
 import { useGetPostsQuery } from '../../redux'
-import { PostsType, TestDataType } from '../../types'
+import { PostsType } from '../../types/posts.type'
 
 import AddPost from '../../Components/AddButton'
 import PostsPanel from './PostsPanel'
@@ -14,8 +15,8 @@ interface IProps {
 }
 
 const PostPage: React.FC<IProps> = ({ testData }) => {
-  const [count, setCount] = useState<string>('All')
-  const [posts, setPosts] = useState<PostsType>([])
+  const [count, setCount] = React.useState<string>('All')
+  const [posts, setPosts] = React.useState<PostsType>([])
 
   const { data } = useGetPostsQuery(count)
 

@@ -4,16 +4,16 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { v4 } from 'uuid'
 
+import Typography from '@mui/material/Typography'
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
 import Modal from '@mui/material/Modal'
 import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
 
+import { FormInputsType } from '../../../types/global.type'
 import { useAddPostMutation } from '../../../redux'
 
 import classes from './AddModal.module.sass'
-import { FormInputsType } from '../../../types'
-import Button from '@mui/material/Button'
 
 interface IProps {
   open: boolean

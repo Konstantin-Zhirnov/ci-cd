@@ -1,8 +1,9 @@
 import React, { useTransition } from 'react'
+import cn from 'classnames'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import { PostsType } from '../../../../types'
+import { PostsType } from '../../../../types/posts.type'
 
 import classes from './PostsFilter.module.sass'
 
@@ -13,9 +14,10 @@ const filterBySearch = (entities: PostsType, search: string): PostsType => {
 interface IProps {
   data: PostsType
   setPosts: React.Dispatch<React.SetStateAction<PostsType>>
+  isMobile: boolean
 }
 
-const PostsFilter: React.FC<IProps> = ({ data, setPosts }) => {
+const PostsFilter: React.FC<IProps> = React.memo(({ data, setPosts, isMobile }) => {
   const [, startTransition] = useTransition()
 
   const [search, setSearch] = React.useState('')
@@ -31,8 +33,8 @@ const PostsFilter: React.FC<IProps> = ({ data, setPosts }) => {
   }, [search, setPosts, data])
 
   return (
-    <div className={classes.container}>
-      <Typography>Posts filter</Typography>
+    <div className={cn(classes.container, { [classes.mobile]: isMobile })}>
+      <Typography>Posts filter:</Typography>
       <TextField
         id="search"
         variant="outlined"
@@ -42,6 +44,6 @@ const PostsFilter: React.FC<IProps> = ({ data, setPosts }) => {
       />
     </div>
   )
-}
+})
 
 export default PostsFilter

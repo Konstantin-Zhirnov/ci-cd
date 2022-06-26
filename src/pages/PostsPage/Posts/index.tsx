@@ -1,22 +1,27 @@
 import React from 'react'
+import cn from 'classnames'
+import { motion } from 'framer-motion'
 
-import { PostsType, PostType } from '../../../types'
+import { useMatchMedia } from '../../../hooks/useMatchMedia'
+import { PostType } from '../../../types/posts.type'
 
 import Post from './Post'
 
 import classes from './Posts.module.sass'
 
 interface IProps {
-  posts: PostsType
+  posts: PostType[]
 }
 
 const Posts: React.FC<IProps> = ({ posts }) => {
+  const { isMobile } = useMatchMedia()
+
   return (
-    <ul className={classes.ul}>
-      {posts?.map((post: PostType) => (
-        <Post key={post.id} post={post} />
+    <motion.ul className={cn(classes.ul, { [classes.mobile]: isMobile })}>
+      {posts?.map((post: PostType, index: number) => (
+        <Post key={post.id} post={post} index={index} />
       ))}
-    </ul>
+    </motion.ul>
   )
 }
 
