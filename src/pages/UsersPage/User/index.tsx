@@ -2,7 +2,6 @@ import React from 'react'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
-import Button from '@mui/material/Button'
 
 import { useAppSelector } from '../../../redux/hooks'
 import { getCurrentUserLoading, getUser } from '../../../redux/users'
