@@ -1,0 +1,15 @@
+.card
+  width: 60%
+  margin: 50px auto
+  padding: 8px
+
+  .img
+    object-fit: cover
+    object-position: center
+
+    &.loading
+      filter: blur(10px)
+
+    &.loaded
+      filter: blur(0)
+      transition: filter 0.5s linear

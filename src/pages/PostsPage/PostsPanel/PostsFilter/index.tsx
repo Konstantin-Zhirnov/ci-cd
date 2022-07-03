@@ -3,17 +3,17 @@ import cn from 'classnames'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import { PostsType } from '../../../../types/posts.type'
+import { PostType } from '../../../../types/posts.type'
 
 import classes from './PostsFilter.module.sass'
 
-const filterBySearch = (entities: PostsType, search: string): PostsType => {
+const filterBySearch = (entities: PostType[], search: string): PostType[] => {
   return entities?.filter((item) => item.title.concat(item.body).includes(search))
 }
 
 interface IProps {
-  data: PostsType
-  setPosts: React.Dispatch<React.SetStateAction<PostsType>>
+  data: PostType[]
+  setPosts: React.Dispatch<React.SetStateAction<PostType[]>>
   isMobile: boolean
 }
 

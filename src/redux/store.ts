@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { postsApi } from './api'
+import commentsReducer from './comments'
 import usersReducer from './users'
 
 export const store = configureStore({
   reducer: {
+    comments: commentsReducer,
     users: usersReducer,
     [postsApi.reducerPath]: postsApi.reducer,
   },

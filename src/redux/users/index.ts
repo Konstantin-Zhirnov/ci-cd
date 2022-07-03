@@ -8,7 +8,7 @@ const initialState: UsersStateType = {
   users: [],
   user: null,
   message: '',
-  isLoading: false,
+  isUsersLoading: false,
   isCurrentUserLoading: false,
 }
 
@@ -20,17 +20,17 @@ export const users = createSlice({
     builder
       .addCase(fetchGetUsers.pending, pendingAllPoke)
       .addCase(fetchGetUsers.fulfilled, (state, action) => {
-        state.users = action.payload || []
-        state.isLoading = false
+        state.users = action.payload
+        state.isUsersLoading = false
       })
       .addCase(fetchGetUsers.rejected, (state, action) => {
         state.message = action.error.message ?? ''
-        state.isLoading = false
+        state.isUsersLoading = false
       })
 
-      .addCase(fetchGetUser.pending, pendingCurrentPoke)
+      .addCase(fetchGetUser.pending, pendingUser)
       .addCase(fetchGetUser.fulfilled, (state, action) => {
-        state.user = action.payload || null
+        state.user = action.payload
         state.isCurrentUserLoading = false
       })
       .addCase(fetchGetUser.rejected, (state, action) => {
@@ -41,18 +41,18 @@ export const users = createSlice({
 })
 
 function pendingAllPoke(state: UsersStateType) {
-  state.isLoading = true
+  state.isUsersLoading = true
   state.message = ''
 }
 
-function pendingCurrentPoke(state: UsersStateType) {
+function pendingUser(state: UsersStateType) {
   state.isCurrentUserLoading = true
   state.message = ''
 }
 
-// export const {} = poke.actions
-
 export const getUsers = (state: RootState): UserType[] => state.users.users
 export const getUser = (state: RootState): UserType | null => state.users.user
+export const getUsersLoading = (state: RootState): boolean => state.users.isUsersLoading
+export const getCurrentUserLoading = (state: RootState): boolean => state.users.isCurrentUserLoading
 
 export default users.reducer

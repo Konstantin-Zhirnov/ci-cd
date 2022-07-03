@@ -1,21 +1,32 @@
 import React from 'react'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
 import { useAppSelector } from '../../../redux/hooks'
-import { getUser } from '../../../redux/users'
+import { getCurrentUserLoading, getUser } from '../../../redux/users'
 
 import ResizableIcon from '../../../Components/ResizableIcon'
+import Circular from '../../../Components/Circular'
 
 import classes from './User.module.sass'
 
 const User: React.FC = React.memo(() => {
   const user = useAppSelector(getUser)
+  const currentUserLoading = useAppSelector(getCurrentUserLoading)
 
   return (
     <Card className={classes.container}>
       <ResizableIcon />
       <Typography variant="h4">User information</Typography>
+      {currentUserLoading && <Circular />}
+
+      {!user && (
+        <div className={classes.arrow}>
+          <ArrowBackIcon />
+          <h3>Push &quot;More detailed&ldquo;</h3>
+        </div>
+      )}
 
       {user && (
         <>

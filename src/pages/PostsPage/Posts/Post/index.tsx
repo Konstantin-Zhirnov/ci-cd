@@ -44,6 +44,7 @@ const Post: React.FC<IProps> = ({ post, index }) => {
       initial="hidden"
       animate="visible"
       className={classes.li}
+      data-testid={`post-${post.id}`}
     >
       <Card className={classes.card}>
         <CardContent>
@@ -54,7 +55,12 @@ const Post: React.FC<IProps> = ({ post, index }) => {
           </Typography>
         </CardContent>
         <CardActions className={classes.btn}>
-          <Button size="small" onClick={handleDeletePost} variant="contained">
+          <Button
+            size="small"
+            onClick={handleDeletePost}
+            variant="contained"
+            data-testid={`post-button-${post.id}`}
+          >
             Delete post
           </Button>
         </CardActions>

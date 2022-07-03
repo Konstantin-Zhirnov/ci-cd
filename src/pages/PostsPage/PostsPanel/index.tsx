@@ -3,7 +3,7 @@ import cn from 'classnames'
 import Card from '@mui/material/Card'
 
 import { useMatchMedia } from '../../../hooks/useMatchMedia'
-import { PostsType } from '../../../types/posts.type'
+import { PostType } from '../../../types/posts.type'
 
 import PostsPanelSelect from './PostsPanelSelect'
 import PostsFilter from './PostsFilter'
@@ -13,8 +13,8 @@ import classes from './PostsPanel.module.sass'
 interface IProps {
   count: string
   setCount: React.Dispatch<React.SetStateAction<string>>
-  data: PostsType
-  setPosts: React.Dispatch<React.SetStateAction<PostsType>>
+  data: PostType[]
+  setPosts: React.Dispatch<React.SetStateAction<PostType[]>>
 }
 
 const PostsPanel: React.FC<IProps> = ({ count, setCount, data, setPosts }) => {

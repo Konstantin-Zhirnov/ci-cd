@@ -1,23 +1,23 @@
 import React from 'react'
-import { Resizable } from 're-resizable'
 import cn from 'classnames'
+import { Resizable } from 're-resizable'
 
 import { useAppDispatch } from '../../redux/hooks'
 import { fetchGetUsers } from '../../redux/users/asyncActions'
 
 import { useMatchMedia } from '../../hooks/useMatchMedia'
 
-import PokemonTable from './UsersTable'
-import Pokemon from './User'
+import UsersTable from './UsersTable'
+import User from './User'
 
 import classes from './UsersPage.module.sass'
 
-const UsersPage: React.FC = React.memo(() => {
+const UsersPage: React.FC = () => {
   const dispatch = useAppDispatch()
 
   const { isMobile } = useMatchMedia()
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     dispatch(fetchGetUsers())
   }, [])
 
@@ -38,11 +38,11 @@ const UsersPage: React.FC = React.memo(() => {
           left: false,
         }}
       >
-        <PokemonTable />
+        <UsersTable />
       </Resizable>
-      <Pokemon />
+      <User />
     </div>
   )
-})
+}
 
 export default UsersPage

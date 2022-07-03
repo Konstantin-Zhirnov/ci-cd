@@ -2,7 +2,7 @@ export type UsersStateType = {
   users: UserType[]
   user: UserType | null
   message: string
-  isLoading: boolean
+  isUsersLoading: boolean
   isCurrentUserLoading: boolean
 }
 

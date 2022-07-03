@@ -11,7 +11,7 @@ import Links from '../Links'
 
 import classes from './Header.module.sass'
 
-const Header = () => {
+const Header: React.FC = () => {
   const { isMobile } = useMatchMedia()
 
   const getMenu = () => (isMobile ? <Index /> : <Links />)

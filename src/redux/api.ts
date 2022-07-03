@@ -10,7 +10,7 @@ export const postsApi = createApi({
   endpoints: (build) => ({
     getPosts: build.query({
       query: (limit) =>
-        `${apiConfig.posts}?${limit && limit !== 'All' && `_start=0&_limit=${limit}`}`,
+        `${apiConfig.posts}${limit && limit !== 'All' ? `?_start=0&_limit=${limit}` : ''} `,
       providesTags: (result) =>
         result
           ? [
@@ -19,6 +19,7 @@ export const postsApi = createApi({
             ]
           : [{ type: 'Posts', id: 'LIST' }],
     }),
+
     addPost: build.mutation({
       query: (body) => ({
         url: apiConfig.posts,
@@ -27,6 +28,7 @@ export const postsApi = createApi({
       }),
       invalidatesTags: [{ type: 'Posts', id: 'LIST' }],
     }),
+
     deletePost: build.mutation({
       query: (id) => ({
         url: `${apiConfig.posts}/${id}`,
