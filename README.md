@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+This React application is a set of implemented functionality written in TypeScript and using
+the Material-UI library. CI/CD is carried out through the application of: github.com and
+netlify.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Posts page:
 
-In the project directory, you can run:
+  The Posts page uses <strong>RTK QUERY</strong> with the ability to add and delete a post.
 
-### `npm start`
+  Requests work fine, only there are responses from <strong>«jsonplaceholder»</strong> that
+  are peculiar.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  Also on this page, a filter is implemented by the number of displayed posts and content.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  The <strong>«framer-motion»</strong> library is used to animate the display of posts
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Users page:
 
-### `npm run build`
+  This page uses the classic <strong>Redux toolkit</strong>.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  When you click on the <strong>«more details»</strong> button, a request is made for more
+  specific information about the selected user.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The received information is displayed in the right window.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  This page also provides the possibility of manually changing the width of the blocks.
+  The&nbsp;
+  <strong>«re-resizable»</strong> library is used.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Comments page:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  The Comments page also uses the classic <strong>Redux toolkit</strong>. Only the display
+  of detailed information about the selected comment is made in a new tab.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  New comments are received when the page is <strong>scrolled</strong>.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Image page:
+On the Image page, a lazy loading of an image of a huge size is carried out.
