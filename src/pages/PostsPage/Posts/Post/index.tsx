@@ -16,7 +16,7 @@ interface IProps {
   index: number
 }
 
-const Post: React.FC<IProps> = ({ post, index }) => {
+const Post: React.FC<IProps> = React.memo(({ post, index }) => {
   const [deletePost] = useDeletePostMutation()
 
   const variants = {
@@ -67,6 +67,6 @@ const Post: React.FC<IProps> = ({ post, index }) => {
       </Card>
     </motion.li>
   )
-}
+})
 
 export default Post

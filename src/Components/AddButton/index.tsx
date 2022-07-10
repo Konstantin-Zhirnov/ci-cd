@@ -6,7 +6,7 @@ import AddModal from './AddModal'
 
 import classes from './AddButton.module.sass'
 
-const AddPost: React.FC = () => {
+const AddPost: React.FC = React.memo(() => {
   const [open, setOpen] = React.useState(false)
   const handleOpen = () => setOpen(true)
 
@@ -18,6 +18,6 @@ const AddPost: React.FC = () => {
       <AddModal open={open} setOpen={setOpen} />
     </>
   )
-}
+})
 
 export default AddPost

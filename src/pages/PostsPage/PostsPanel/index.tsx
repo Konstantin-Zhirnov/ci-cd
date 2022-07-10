@@ -17,7 +17,7 @@ interface IProps {
   setPosts: React.Dispatch<React.SetStateAction<PostType[]>>
 }
 
-const PostsPanel: React.FC<IProps> = ({ count, setCount, data, setPosts }) => {
+const PostsPanel: React.FC<IProps> = React.memo(({ count, setCount, data, setPosts }) => {
   const { isMobile } = useMatchMedia()
 
   return (
@@ -26,6 +26,6 @@ const PostsPanel: React.FC<IProps> = ({ count, setCount, data, setPosts }) => {
       <PostsPanelSelect count={count} setCount={setCount} isMobile={isMobile} />
     </Card>
   )
-}
+})
 
 export default PostsPanel

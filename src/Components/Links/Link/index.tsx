@@ -5,17 +5,14 @@ import { LinkType } from '../../../types/global.type'
 
 import classes from './Link.module.sass'
 
-interface IProps {
-  link: LinkType
-}
-
-const Link: React.FC<IProps> = ({ link }) => {
+const Link: React.FC<LinkType> = React.memo(({ name, to }) => {
   return (
     <li className={classes.li}>
-      <NavLink to={link.to} className={({ isActive }) => (isActive ? classes.active : '')}>
-        {link.name}
+      <NavLink to={to} className={({ isActive }) => (isActive ? classes.active : '')}>
+        {name}
       </NavLink>
     </li>
   )
-}
+})
+
 export default Link

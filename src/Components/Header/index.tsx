@@ -6,7 +6,7 @@ import Container from '@mui/material/Container'
 
 import { useMatchMedia } from '../../hooks/useMatchMedia'
 
-import Index from '../MobileMenu'
+import MobileMenu from '../MobileMenu'
 import Links from '../Links'
 
 import classes from './Header.module.sass'
@@ -14,7 +14,7 @@ import classes from './Header.module.sass'
 const Header: React.FC = () => {
   const { isMobile } = useMatchMedia()
 
-  const getMenu = () => (isMobile ? <Index /> : <Links />)
+  const getMenu = () => (isMobile ? <MobileMenu /> : <Links />)
 
   return (
     <AppBar position="static" className={classes.header}>

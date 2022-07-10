@@ -10,12 +10,17 @@ import TableRow from '@mui/material/TableRow'
 import { useAppSelector } from '../../../redux/hooks'
 import { getUsers } from '../../../redux/users'
 
+import { UserType } from '../../../types/users.type'
+
+import List from '../../../Components/List'
 import UsersTableRow from './UsersTableRow'
 
 import classes from './UsersTable.module.sass'
 
 const PokemonTable: React.FC = React.memo(() => {
   const users = useAppSelector(getUsers)
+
+  const renderItem = (item: UserType) => <UsersTableRow key={item.id} user={item} />
 
   return (
     <Card className={classes.container}>
@@ -30,9 +35,7 @@ const PokemonTable: React.FC = React.memo(() => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {users?.map((user) => (
-              <UsersTableRow key={user.id} user={user} />
-            ))}
+            <List items={users} renderItem={renderItem} />
           </TableBody>
         </Table>
       </TableContainer>

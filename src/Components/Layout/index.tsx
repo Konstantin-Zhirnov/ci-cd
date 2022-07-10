@@ -14,7 +14,7 @@ const Layout = () => {
 
   return (
     <>
-      {isUsersLoading || (isCommentsLoading && <Loader />)}
+      {(isUsersLoading || isCommentsLoading) && <Loader />}
       <Header />
       <Outlet />
     </>

@@ -10,6 +10,9 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { fetchGetComments } from '../../redux/comments/asyncActions'
 import { getComments, getFetching, setFetching } from '../../redux/comments'
 
+import { CommentType } from '../../types/comments.type'
+
+import List from '../../Components/List'
 import CommentTableRow from './CommentTableRow'
 
 import classes from './CommentsPage.module.sass'
@@ -29,6 +32,8 @@ const CommentsPage: React.FC = React.memo(() => {
       dispatch(setFetching(true))
     }
   }
+
+  const renderItem = (item: CommentType) => <CommentTableRow key={item.id} comment={item} />
 
   React.useEffect(() => {
     if (fetching) {
@@ -56,9 +61,7 @@ const CommentsPage: React.FC = React.memo(() => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {comments?.map((comment) => (
-            <CommentTableRow key={comment.id} comment={comment} />
-          ))}
+          <List items={comments} renderItem={renderItem} />
         </TableBody>
       </Table>
     </TableContainer>

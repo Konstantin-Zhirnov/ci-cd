@@ -12,7 +12,7 @@ interface IProps {
   isMobile: boolean
 }
 
-const PostsPanelSelect: React.FC<IProps> = ({ count, setCount, isMobile }) => {
+const PostsPanelSelect: React.FC<IProps> = React.memo(({ count, setCount, isMobile }) => {
   const handleChange = (event: SelectChangeEvent) => {
     setCount(event.target.value)
   }
@@ -36,6 +36,6 @@ const PostsPanelSelect: React.FC<IProps> = ({ count, setCount, isMobile }) => {
       </Select>
     </div>
   )
-}
+})
 
 export default PostsPanelSelect
