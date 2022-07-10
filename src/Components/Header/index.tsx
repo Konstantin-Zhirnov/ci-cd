@@ -10,6 +10,7 @@ import MobileMenu from '../MobileMenu'
 import Links from '../Links'
 
 import classes from './Header.module.sass'
+import { Link } from '@mui/material'
 
 const Header: React.FC = () => {
   const { isMobile } = useMatchMedia()
@@ -23,6 +24,16 @@ const Header: React.FC = () => {
           <img src="/images/logo.png" alt="logo" className={classes.logo} />
           <Typography className={classes.title}>CI/CD</Typography>
           {getMenu()}
+
+          {!isMobile && (
+            <Link
+              href="https://github.com/Konstantin-Zhirnov/ci-cd"
+              target="_blank"
+              className={classes.link}
+            >
+              GitHub
+            </Link>
+          )}
         </Toolbar>
       </Container>
     </AppBar>
