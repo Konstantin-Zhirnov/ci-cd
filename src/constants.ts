@@ -6,4 +6,5 @@ export const links: LinkType[] = [
   { name: 'Users', to: '/users' },
   { name: 'Comments', to: '/comments' },
   { name: 'Image', to: '/image' },
+  { name: 'Apollo', to: '/apollo' },
 ]

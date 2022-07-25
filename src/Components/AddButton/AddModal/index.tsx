@@ -37,6 +37,7 @@ const AddModal: React.FC<IProps> = ({ open, setOpen }) => {
   const { register, handleSubmit } = useForm<FormInputsType>({
     resolver: yupResolver(schema),
   })
+
   const onSubmit: SubmitHandler<FormInputsType> = async (data) => {
     await addPost({
       id: v4(),

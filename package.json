@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@hookform/resolvers": "^2.9.1",
@@ -18,7 +19,10 @@
     "@types/uuid": "^8.3.4",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
+    "concurrently": "^7.3.0",
     "framer-motion": "^6.3.15",
+    "graphql": "^16.5.0",
+    "json-graphql-server": "^2.3.1",
     "node-sass": "^7.0.1",
     "prettier": "^2.6.2",
     "re-resizable": "^6.9.9",
@@ -34,10 +38,11 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm run dev\" \"npm run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "react-scripts start",
+    "server": "json-graphql-server db.js --p 4000"
   },
   "eslintConfig": {
     "extends": [
