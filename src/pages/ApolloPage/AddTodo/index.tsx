@@ -3,21 +3,25 @@ import { useMutation } from '@apollo/client'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 
+import { useMatchMedia } from '../../../hooks/useMatchMedia'
 import { ADD_TODO, ALL_TODOS } from '../../../apollo/todos'
 
 import classes from './AddTodo.module.sass'
+import cn from 'classnames'
 
 const AddTodo: React.FC = React.memo(() => {
+  const { isMobile } = useMatchMedia()
+
   const [text, setText] = React.useState('')
+
   const [addTodo, { error }] = useMutation(ADD_TODO, {
     // refetchQueries: [{ query: ALL_TODOS }],
-    update(cache, { data: { newTodo } }) {
+    update(cache, { data: { addTodo } }) {
       const cacheObject = cache.readQuery({ query: ALL_TODOS })
-
       cache.writeQuery({
         query: ALL_TODOS,
         data: {
-          todos: [newTodo, ...(cacheObject as any).todos],
+          todos: [addTodo, ...(cacheObject as any).todos],
         },
       })
     },
@@ -32,8 +36,6 @@ const AddTodo: React.FC = React.memo(() => {
       addTodo({
         variables: {
           title: text,
-          completed: false,
-          userId: 102,
         },
       })
       setText('')
@@ -47,7 +49,7 @@ const AddTodo: React.FC = React.memo(() => {
   if (error) return <h2>Error...</h2>
 
   return (
-    <div className={classes.container}>
+    <div className={cn(classes.container, { [classes.mobile]: isMobile })}>
       <TextField
         value={text}
         className={classes.input}

@@ -14,18 +14,8 @@ import classes from './TodoList.module.sass'
 const TodoList: React.FC = React.memo(() => {
   const { loading, error, data } = useQuery(ALL_TODOS)
   const [toggleTodo, { error: updateError }] = useMutation(UPDATE_TODO)
-  const [removeTodo, { error: removeError }] = useMutation(DELETE_TODO, {
-    update(cache, { data: { removeTodo } }) {
-      cache.modify({
-        fields: {
-          allTodos(currentTodos = []) {
-            return currentTodos.filter(
-              (todo: { __ref: string }) => todo.__ref !== `Todo:${removeTodo.id}`,
-            )
-          },
-        },
-      })
-    },
+  const [removeTodo, { error: deleteError }] = useMutation(DELETE_TODO, {
+    refetchQueries: [{ query: ALL_TODOS }],
   })
 
   const renderItem = (item: TodoType) => (
@@ -41,7 +31,7 @@ const TodoList: React.FC = React.memo(() => {
 
   if (loading) return <Circular />
 
-  if (error || updateError || removeError) return <h2>Error...</h2>
+  if (error || updateError || deleteError) return <h2>Error...</h2>
 
   return (
     <>

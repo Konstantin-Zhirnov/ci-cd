@@ -13,7 +13,7 @@ import classes from './Header.module.sass'
 import { Link } from '@mui/material'
 
 const Header: React.FC = () => {
-  const { isMobile } = useMatchMedia()
+  const { isDesktop, isMobile } = useMatchMedia()
 
   const getMenu = () => (isMobile ? <MobileMenu /> : <Links />)
 
@@ -25,7 +25,7 @@ const Header: React.FC = () => {
           <Typography className={classes.title}>CI/CD</Typography>
           {getMenu()}
 
-          {!isMobile && (
+          {isDesktop && (
             <Link
               href="https://github.com/Konstantin-Zhirnov/ci-cd"
               target="_blank"

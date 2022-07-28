@@ -2,7 +2,7 @@ import { gql } from '@apollo/client'
 
 export const ALL_TODOS = gql(`
     query AllTodos {
-      todos: allTodos {
+      todos {
         id
         title
         completed
@@ -11,8 +11,8 @@ export const ALL_TODOS = gql(`
 `)
 
 export const ADD_TODO = gql(`
-    mutation AddTodo($title: String!, $userId: ID!, $completed: Boolean!) {
-      newTodo: createTodo(title: $title, user_id: $userId, completed: $completed) {
+    mutation AddTodo($title: String) {
+      addTodo(title: $title) {
         id
         title
         completed
@@ -21,7 +21,7 @@ export const ADD_TODO = gql(`
 `)
 
 export const UPDATE_TODO = gql(`
-    mutation UpdateTodo($id: ID!, $completed: Boolean) {
+    mutation UpdateTodo($id: ID, $completed: Boolean) {
       updateTodo(id: $id, completed: $completed) {
         id
         title
@@ -31,8 +31,8 @@ export const UPDATE_TODO = gql(`
 `)
 
 export const DELETE_TODO = gql(`
-    mutation DeleteTodo($id: ID!) {
-      removeTodo(id: $id) {
+    mutation DeleteTodo($id: ID) {
+      deleteTodo(id: $id) {
         id
       }
     }

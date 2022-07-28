@@ -59,6 +59,14 @@ const HomePage: React.FC = () => {
       </Card>
 
       <Card className={classes.card}>
+        <h3>Apollo page:</h3>
+        <p>
+          The Apollo page presents the display, creation, modification and deletion of a todo list.
+        </p>
+        <p>All queries are implemented using graphml and the Apollo library.</p>
+      </Card>
+
+      <Card className={classes.card}>
         <h3>Image page:</h3>
         <p>On the Image page, a lazy loading of an image of a huge size is carried out.</p>
       </Card>
