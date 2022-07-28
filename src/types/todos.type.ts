@@ -1,8 +1,11 @@
 export type TodoType = {
   id: number
   title: string
-  user_id: number
   completed: boolean
+  user: {
+    name: string
+    age: number
+  }
 }
 
 export interface IVariables {

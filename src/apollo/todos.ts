@@ -6,16 +6,24 @@ export const ALL_TODOS = gql(`
         id
         title
         completed
+        user {
+            name
+            age
+        }
       }
     }
 `)
 
 export const ADD_TODO = gql(`
-    mutation AddTodo($title: String) {
-      addTodo(title: $title) {
+    mutation AddTodo($title: String, $userId: Int) {
+      addTodo(title: $title, userId: $userId) {
         id
         title
         completed
+        user {
+            name
+            age
+        }
       }
     }
 `)

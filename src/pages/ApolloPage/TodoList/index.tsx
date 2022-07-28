@@ -24,6 +24,8 @@ const TodoList: React.FC = React.memo(() => {
       id={item.id}
       title={item.title}
       completed={item.completed}
+      name={item.user.name}
+      age={item.user.age}
       onToggle={toggleTodo}
       onDelete={removeTodo}
     />

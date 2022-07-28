@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 import { useMutation } from '@apollo/client'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
@@ -6,13 +7,15 @@ import Button from '@mui/material/Button'
 import { useMatchMedia } from '../../../hooks/useMatchMedia'
 import { ADD_TODO, ALL_TODOS } from '../../../apollo/todos'
 
+import UserSelect from './UserSelect'
+
 import classes from './AddTodo.module.sass'
-import cn from 'classnames'
 
 const AddTodo: React.FC = React.memo(() => {
   const { isMobile } = useMatchMedia()
 
   const [text, setText] = React.useState('')
+  const [userId, setUserId] = React.useState('1')
 
   const [addTodo, { error }] = useMutation(ADD_TODO, {
     // refetchQueries: [{ query: ALL_TODOS }],
@@ -36,6 +39,7 @@ const AddTodo: React.FC = React.memo(() => {
       addTodo({
         variables: {
           title: text,
+          userId: Number(userId),
         },
       })
       setText('')
@@ -58,9 +62,13 @@ const AddTodo: React.FC = React.memo(() => {
         onKeyDown={handleKey}
       />
 
-      <Button onClick={handleAddTodo} variant="contained" className={classes.btn}>
-        Add todo
-      </Button>
+      <div>
+        <UserSelect userId={userId} setUserId={setUserId} />
+
+        <Button onClick={handleAddTodo} variant="contained" className={classes.btn}>
+          Add todo
+        </Button>
+      </div>
     </div>
   )
 })
