@@ -63,7 +63,7 @@ const HomePage: React.FC = () => {
         <p>
           The Apollo page presents the display, creation, modification and deletion of a todo list.
         </p>
-        <p>All queries are implemented using graphml and the Apollo library.</p>
+        <p>All queries are implemented using graphql and the Apollo library.</p>
       </Card>
 
       <Card className={classes.card}>
