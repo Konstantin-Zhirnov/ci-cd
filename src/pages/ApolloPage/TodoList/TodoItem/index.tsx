@@ -8,6 +8,7 @@ import DeleteButton from './DeleteButton'
 
 import classes from './TodoItem.module.sass'
 import { Divider } from '@mui/material'
+import Card from '@mui/material/Card'
 
 interface IProps {
   id: number
@@ -22,7 +23,7 @@ interface IProps {
 const TodoItem: React.FC<IProps> = React.memo(
   ({ id, title, completed, name, age, onToggle, onDelete }) => {
     return (
-      <li className={classes.li}>
+      <Card className={classes.li} component="li">
         <div className={classes.container}>
           <FormControlLabel
             control={
@@ -54,7 +55,7 @@ const TodoItem: React.FC<IProps> = React.memo(
             <span>age:</span> {age}
           </p>
         </div>
-      </li>
+      </Card>
     )
   },
 )
