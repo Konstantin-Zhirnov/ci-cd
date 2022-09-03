@@ -35,6 +35,11 @@ The received information is displayed in the right window.
   of detailed information about the selected comment is made in a new tab.
 
   New comments are received when the page is <strong>scrolled</strong>.
+  
+# Apollo page:
+
+The Apollo page presents the display, creation, modification and deletion of a todo list.
+All queries are implemented using graphql and the Apollo library.
 
 # Image page:
 On the Image page, a lazy loading of an image of a huge size is carried out.
