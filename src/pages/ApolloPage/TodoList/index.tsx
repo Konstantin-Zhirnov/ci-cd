@@ -37,7 +37,7 @@ const TodoList: React.FC = React.memo(() => {
 
   return (
     <>
-      <ul className={classes.TodoList}>
+      <ul className={classes.container}>
         <List<TodoType> items={data.todos} renderItem={renderItem} />
       </ul>
 
