@@ -10,6 +10,7 @@ import { useDeletePostMutation } from '../../../../redux'
 import { PostType } from '../../../../types/posts.type'
 
 import classes from './Post.module.sass'
+import { variants } from '../../../../constants'
 
 interface IProps {
   post: PostType
@@ -19,19 +20,19 @@ interface IProps {
 const Post: React.FC<IProps> = React.memo(({ post, index }) => {
   const [deletePost] = useDeletePostMutation()
 
-  const variants = {
-    visible: (i: number) => ({
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delay: i * 0.3,
-      },
-    }),
-    hidden: {
-      scale: 0.1,
-      opacity: 0,
-    },
-  }
+  // const variants = {
+  //   visible: (i: number) => ({
+  //     opacity: 1,
+  //     scale: 1,
+  //     transition: {
+  //       delay: i * 0.3,
+  //     },
+  //   }),
+  //   hidden: {
+  //     scale: 0.1,
+  //     opacity: 0,
+  //   },
+  // }
 
   const handleDeletePost = async () => {
     await deletePost(post.id).unwrap()
