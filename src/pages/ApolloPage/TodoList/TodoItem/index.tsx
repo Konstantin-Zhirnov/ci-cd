@@ -1,14 +1,13 @@
 import React from 'react'
+import Card from '@mui/material/Card'
 import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
 import { VariablesFunctionType } from '../../../../types/todos.type'
 
-import DeleteButton from './DeleteButton'
+import DeleteButton from '../../../../Components/DeleteButton'
 
 import classes from './TodoItem.module.sass'
-import { Divider } from '@mui/material'
-import Card from '@mui/material/Card'
 
 interface IProps {
   id: number
@@ -22,6 +21,10 @@ interface IProps {
 
 const TodoItem: React.FC<IProps> = React.memo(
   ({ id, title, completed, name, age, onToggle, onDelete }) => {
+    const handleClickDeleteButton = () => {
+      onDelete({ variables: { id } })
+    }
+
     return (
       <Card className={classes.li} component="li">
         <div className={classes.container}>
@@ -42,10 +45,8 @@ const TodoItem: React.FC<IProps> = React.memo(
             label={title}
           />
 
-          <DeleteButton id={id} onDelete={onDelete} />
+          <DeleteButton onClick={handleClickDeleteButton} />
         </div>
-
-        <Divider className={classes.divider} />
 
         <div className={classes.container}>
           <p>

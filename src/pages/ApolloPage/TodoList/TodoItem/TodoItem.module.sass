@@ -3,18 +3,30 @@
 .li
   box-shadow: $box-shadow
   margin-bottom: 16px
-  padding: 8px 8px 0 16px
 
   .container
     display: flex
     align-items: center
-    p span
+    justify-content: space-between
+    padding: 5px 5px 0 16px
+    label
+      width: calc(100% - 42px)
+      span:last-child
+        overflow: hidden
+
+    p
       font-weight: bold
+
+    p span:first-child
+      color: $white
+      margin-right: 4px
+
     p:first-child
       width: 60%
 
+  .container:last-child
+    background-color: $primary-color
+    padding: 0 16px
+
   .title
     margin: 0 8px
-
-  .divider
-    margin-top: 8px

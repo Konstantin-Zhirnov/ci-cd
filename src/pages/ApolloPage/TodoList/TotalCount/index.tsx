@@ -12,7 +12,7 @@ const TotalCount: React.FC = React.memo(() => {
   if (data.todos) {
     return (
       <div className={classes.container}>
-        Total todos: <Chip label={data.todos.length} variant="outlined" />
+        Total todos: <Chip label={data.todos.length} variant="outlined" className={classes.chip} />
       </div>
     )
   }
