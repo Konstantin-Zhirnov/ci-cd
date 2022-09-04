@@ -62,7 +62,7 @@ const AddTodo: React.FC = React.memo(() => {
         onKeyDown={handleKey}
       />
 
-      <div>
+      <div className={classes.group}>
         <UserSelect userId={userId} setUserId={setUserId} />
 
         <Button onClick={handleAddTodo} variant="contained" className={classes.btn}>

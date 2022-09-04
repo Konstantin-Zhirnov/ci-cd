@@ -1,15 +1,25 @@
+@import '../../../vars.sass'
+
 .container
-  padding: 50px
+  padding: 12px 0
   display: flex
   align-items: center
   justify-content: center
   gap: 8px
+  background: $white
+  margin: 0 16px
+  border-radius: 4px
+
   &.mobile
     padding: 50px 8px
     flex-direction: column
     .input
       width: 90%
       margin-right: 0
+
+  .group
+    display: flex
+    align-items: center
 
   .input input
     padding: 5px

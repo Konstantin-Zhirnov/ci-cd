@@ -1,12 +1,14 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
+
 import Card from '@mui/material/Card'
-import { Link } from '@mui/material'
+import { Divider, Link } from '@mui/material'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 
 import { variants } from '../../constants'
+
+import LinkButton from '../../Components/LinkButton'
 
 import classes from './HomePege.module.sass'
 
@@ -31,7 +33,53 @@ const HomePage: React.FC = () => {
         <motion.div variants={variants} custom={1} initial="hidden" animate="visible">
           <Card className={classes.card}>
             <CardContent>
-              <h3>Posts page:</h3>
+              <h3>Apollo page</h3>
+              <Divider className={classes.divider} />
+              <p>
+                The Apollo page presents the display, creation, modification and deletion of a todo
+                list.
+              </p>
+              <p>
+                All queries are implemented using <strong>graphql</strong> and the{' '}
+                <strong>Apollo</strong> library.
+              </p>
+            </CardContent>
+            <CardActions>
+              <LinkButton link="/apollo" title="Go to page" />
+            </CardActions>
+          </Card>
+        </motion.div>
+
+        <motion.div variants={variants} custom={2} initial="hidden" animate="visible">
+          <Card className={classes.card}>
+            <CardContent>
+              <h3>Users page</h3>
+              <Divider className={classes.divider} />
+              <p>
+                This page uses the classic <strong>Redux toolkit</strong>.
+              </p>
+              <p>
+                When you click on the <strong>«more details»</strong> button, a request is made for
+                more specific information about the selected user.
+              </p>
+              <p>The received information is displayed in the right window.</p>
+              <p>
+                This page also provides the possibility of manually changing the width of the
+                blocks. The&nbsp;
+                <strong>«re-resizable»</strong> library is used.
+              </p>
+            </CardContent>
+            <CardActions>
+              <LinkButton link="/users" title="Go to page" />
+            </CardActions>
+          </Card>
+        </motion.div>
+
+        <motion.div variants={variants} custom={3} initial="hidden" animate="visible">
+          <Card className={classes.card}>
+            <CardContent>
+              <h3>Posts page</h3>
+              <Divider className={classes.divider} />
               <p>
                 The Posts page uses <strong>RTK QUERY</strong> with the ability to add and delete a
                 post.
@@ -49,55 +97,7 @@ const HomePage: React.FC = () => {
               </p>
             </CardContent>
             <CardActions>
-              <NavLink to="/posts" className={classes.btn}>
-                Go to page
-              </NavLink>
-            </CardActions>
-          </Card>
-        </motion.div>
-
-        <motion.div variants={variants} custom={2} initial="hidden" animate="visible">
-          <Card className={classes.card}>
-            <CardContent>
-              <h3>Users page:</h3>
-              <p>
-                This page uses the classic <strong>Redux toolkit</strong>.
-              </p>
-              <p>
-                When you click on the <strong>«more details»</strong> button, a request is made for
-                more specific information about the selected user.
-              </p>
-              <p>The received information is displayed in the right window.</p>
-              <p>
-                This page also provides the possibility of manually changing the width of the
-                blocks. The&nbsp;
-                <strong>«re-resizable»</strong> library is used.
-              </p>
-            </CardContent>
-            <CardActions>
-              <NavLink to="/users" className={classes.btn}>
-                Go to page
-              </NavLink>
-            </CardActions>
-          </Card>
-        </motion.div>
-
-        <motion.div variants={variants} custom={3} initial="hidden" animate="visible">
-          <Card className={classes.card}>
-            <CardContent>
-              <h3>Comments page:</h3>
-              <p>
-                The Comments page also uses the classic <strong>Redux toolkit</strong>. Only the
-                display of detailed information about the selected comment is made in a new tab.
-              </p>
-              <p>
-                New comments are received when the page is <strong>scrolled</strong>.
-              </p>
-            </CardContent>
-            <CardActions>
-              <NavLink to="/comments" className={classes.btn}>
-                Go to page
-              </NavLink>
+              <LinkButton link="/posts" title="Go to page" />
             </CardActions>
           </Card>
         </motion.div>
@@ -105,17 +105,18 @@ const HomePage: React.FC = () => {
         <motion.div variants={variants} custom={4} initial="hidden" animate="visible">
           <Card className={classes.card}>
             <CardContent>
-              <h3>Apollo page:</h3>
+              <h3>Comments page</h3>
+              <Divider className={classes.divider} />
               <p>
-                The Apollo page presents the display, creation, modification and deletion of a todo
-                list.
+                The Comments page also uses the classic <strong>Redux toolkit</strong>. A new tab
+                displays detailed information about the selected comment.
               </p>
-              <p>All queries are implemented using graphql and the Apollo library.</p>
+              <p>
+                Getting a new set of comments comes when the page is <strong>scrolled</strong>.
+              </p>
             </CardContent>
             <CardActions>
-              <NavLink to="/apollo" className={classes.btn}>
-                Go to page
-              </NavLink>
+              <LinkButton link="/comments" title="Go to page" />
             </CardActions>
           </Card>
         </motion.div>
@@ -123,13 +124,12 @@ const HomePage: React.FC = () => {
         <motion.div variants={variants} custom={5} initial="hidden" animate="visible">
           <Card className={classes.card}>
             <CardContent>
-              <h3>Image page:</h3>
+              <h3>Image page</h3>
+              <Divider className={classes.divider} />
               <p>On the Image page, a lazy loading of an image of a huge size is carried out.</p>
             </CardContent>
             <CardActions>
-              <NavLink to="/image" className={classes.btn}>
-                Go to page
-              </NavLink>
+              <LinkButton link="/image" title="Go to page" />
             </CardActions>
           </Card>
         </motion.div>

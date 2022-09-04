@@ -21,6 +21,21 @@ const PostPage: React.FC = () => {
 
   return (
     <div className={classes.container}>
+      <div className={classes.text}>
+        <p>
+          The Posts page uses <strong>RTK QUERY</strong> with the ability to add and delete a post.
+        </p>
+        <p>
+          Requests work fine, only there are responses from <strong>«jsonplaceholder»</strong> that
+          are peculiar.
+        </p>
+        <p>
+          Also on this page, a filter is implemented by the number of displayed posts and content.
+        </p>
+        <p>
+          The <strong>«framer-motion»</strong> library is used to animate the display of posts
+        </p>
+      </div>
       <PostsPanel count={count} setCount={setCount} data={data} setPosts={setPosts} />
 
       <Posts posts={posts} />

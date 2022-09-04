@@ -50,21 +50,33 @@ const CommentsPage: React.FC = React.memo(() => {
   }, [])
 
   return (
-    <TableContainer sx={{ maxHeight: '100%' }} className={classes.container}>
-      <Table stickyHeader aria-label="sticky table">
-        <TableHead>
-          <TableRow>
-            <TableCell>
-              <strong>Comment name</strong>
-            </TableCell>
-            <TableCell />
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <List items={comments} renderItem={renderItem} />
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <>
+      <div className={classes.text}>
+        <p>
+          The Comments page also uses the classic <strong>Redux toolkit</strong>. A new tab displays
+          detailed information about the selected comment.
+        </p>
+        <p>
+          Getting a new set of comments comes when the page is <strong>scrolled</strong>.
+        </p>
+      </div>
+
+      <TableContainer sx={{ maxHeight: '100%' }} className={classes.table}>
+        <Table stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow>
+              <TableCell>
+                <strong>Comment name</strong>
+              </TableCell>
+              <TableCell />
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <List items={comments} renderItem={renderItem} />
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   )
 })
 

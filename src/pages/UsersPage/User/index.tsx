@@ -26,10 +26,27 @@ const User: React.FC = React.memo(() => {
       {currentUserLoading && <Loader />}
 
       {!user && (
-        <div className={classes.arrow}>
-          {isMobile ? <ArrowDownwardIcon /> : <ArrowBackIcon />}
-          <h3>Push &quot;More detailed&ldquo;</h3>
-        </div>
+        <>
+          <div className={classes.arrow}>
+            {isMobile ? <ArrowDownwardIcon /> : <ArrowBackIcon />}
+            <h3>Push «More detailed»</h3>
+          </div>
+          <div>
+            <p>
+              This page uses the classic <strong>Redux toolkit</strong>.
+            </p>
+            <p>
+              When you click on the <strong>«more details»</strong> button, a request is made for
+              more specific information about the selected user.
+            </p>
+            <p>The received information is displayed in the right window.</p>
+            <p>
+              This page also provides the possibility of manually changing the width of the blocks.
+              The&nbsp;
+              <strong>«re-resizable»</strong> library is used.
+            </p>
+          </div>
+        </>
       )}
 
       {user && (
