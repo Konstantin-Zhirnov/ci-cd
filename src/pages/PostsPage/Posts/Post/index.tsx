@@ -23,9 +23,9 @@ interface IProps {
 const Post: React.FC<IProps> = React.memo(({ post, index }) => {
   const [deletePost] = useDeletePostMutation()
 
-  const handleDeletePost = async () => {
+  const memoizedCallback = React.useCallback(async () => {
     await deletePost(post.id).unwrap()
-  }
+  }, [])
 
   return (
     <motion.li
@@ -46,7 +46,7 @@ const Post: React.FC<IProps> = React.memo(({ post, index }) => {
           </Typography>
         </CardContent>
         <CardActions className={classes.btn}>
-          <DeleteButton onClick={handleDeletePost} />
+          <DeleteButton onClick={memoizedCallback} />
         </CardActions>
       </Card>
     </motion.li>

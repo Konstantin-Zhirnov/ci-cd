@@ -21,9 +21,9 @@ interface IProps {
 
 const TodoItem: React.FC<IProps> = React.memo(
   ({ id, title, completed, name, age, onToggle, onDelete }) => {
-    const handleClickDeleteButton = () => {
+    const memoizedCallback = React.useCallback(() => {
       onDelete({ variables: { id } })
-    }
+    }, [])
 
     return (
       <Card className={classes.li} component="li">
@@ -45,7 +45,7 @@ const TodoItem: React.FC<IProps> = React.memo(
             label={title}
           />
 
-          <DeleteButton onClick={handleClickDeleteButton} />
+          <DeleteButton onClick={memoizedCallback} />
         </div>
 
         <div className={classes.container}>

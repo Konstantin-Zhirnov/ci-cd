@@ -6,12 +6,12 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 
 import { useAppSelector } from '../../../redux/hooks'
 import { getCurrentUserLoading, getUser } from '../../../redux/users'
+import { useMatchMedia } from '../../../hooks/useMatchMedia'
 
 import ResizableIcon from '../../../Components/ResizableIcon'
 import Loader from '../../../Components/Loader'
 
 import classes from './User.module.sass'
-import { useMatchMedia } from '../../../hooks/useMatchMedia'
 
 const User: React.FC = React.memo(() => {
   const user = useAppSelector(getUser)
