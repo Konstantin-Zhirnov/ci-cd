@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { useQuery, useMutation } from '@apollo/client'
 
 import { TodoType } from '../../../types/todos.type'
@@ -18,7 +19,7 @@ const TodoList: React.FC = React.memo(() => {
     refetchQueries: [{ query: ALL_TODOS }],
   })
 
-  const renderItem = (item: TodoType) => (
+  const renderItem = (item: TodoType, index?: number) => (
     <TodoItem
       key={item.id}
       id={item.id}
@@ -28,6 +29,7 @@ const TodoList: React.FC = React.memo(() => {
       age={item.user.age}
       onToggle={toggleTodo}
       onDelete={removeTodo}
+      index={index || 0}
     />
   )
 
@@ -37,9 +39,9 @@ const TodoList: React.FC = React.memo(() => {
 
   return (
     <>
-      <ul className={classes.container}>
+      <motion.ul className={classes.container}>
         <List<TodoType> items={data.todos} renderItem={renderItem} />
-      </ul>
+      </motion.ul>
 
       <TotalCount />
     </>

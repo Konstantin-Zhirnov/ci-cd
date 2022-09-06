@@ -3,6 +3,7 @@ import React from 'react'
 import { useGetPostsQuery } from '../../redux'
 import { PostType } from '../../types/posts.type'
 
+import InformationAboutPage from '../../Components/InformationAboutPage'
 import AddPost from '../../Components/AddButton'
 import PostsPanel from './PostsPanel'
 import Posts from './Posts'
@@ -21,7 +22,7 @@ const PostPage: React.FC = () => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.text}>
+      <InformationAboutPage>
         <p>
           The Posts page uses <strong>RTK QUERY</strong> with the ability to add and delete a post.
         </p>
@@ -35,7 +36,7 @@ const PostPage: React.FC = () => {
         <p>
           The <strong>«framer-motion»</strong> library is used to animate the display of posts
         </p>
-      </div>
+      </InformationAboutPage>
       <PostsPanel count={count} setCount={setCount} data={data} setPosts={setPosts} />
 
       <Posts posts={posts} />

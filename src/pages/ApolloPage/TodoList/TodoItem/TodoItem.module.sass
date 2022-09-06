@@ -1,34 +1,31 @@
 @import '../../../../vars.sass'
 
-.li
-  box-shadow: $box-shadow
+.container
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 12px 5px 12px 16px
+  label
+    width: calc(100% - 42px)
+    span:last-child
+      overflow: hidden
 
-  .container
-    display: flex
-    align-items: center
-    justify-content: space-between
-    padding: 12px 5px 12px 16px
-    label
-      width: calc(100% - 42px)
-      span:last-child
-        overflow: hidden
+  p
+    font-weight: bold
 
-    p
-      font-weight: bold
+  p span:first-child
+    color: $white
+    margin-right: 4px
 
-    p span:first-child
-      color: $white
-      margin-right: 4px
+  p:first-child
+    width: 60%
 
-    p:first-child
-      width: 60%
+.container:last-child
+  background-color: $primary-color
+  padding: 0 16px
 
-  .container:last-child
-    background-color: $primary-color
-    padding: 0 16px
+  p
+    margin: 6px 0 8px
 
-    p
-      margin: 6px 0 8px
-
-  .title
-    margin: 0 8px
+.title
+  margin: 0 8px

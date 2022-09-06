@@ -1,10 +1,11 @@
 import React from 'react'
-import Table from '@mui/material/Table'
+
+import TableContainer from '@mui/material/TableContainer'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
+import Table from '@mui/material/Table'
 
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { fetchGetComments } from '../../redux/comments/asyncActions'
@@ -12,8 +13,9 @@ import { getComments, getFetching, setFetching } from '../../redux/comments'
 
 import { CommentType } from '../../types/comments.type'
 
-import List from '../../Components/List'
+import InformationAboutPage from '../../Components/InformationAboutPage'
 import CommentTableRow from './CommentTableRow'
+import List from '../../Components/List'
 
 import classes from './CommentsPage.module.sass'
 
@@ -51,7 +53,7 @@ const CommentsPage: React.FC = React.memo(() => {
 
   return (
     <>
-      <div className={classes.text}>
+      <InformationAboutPage>
         <p>
           The Comments page also uses the classic <strong>Redux toolkit</strong>. A new tab displays
           detailed information about the selected comment.
@@ -59,7 +61,7 @@ const CommentsPage: React.FC = React.memo(() => {
         <p>
           Getting a new set of comments comes when the page is <strong>scrolled</strong>.
         </p>
-      </div>
+      </InformationAboutPage>
 
       <TableContainer sx={{ maxHeight: '100%' }} className={classes.table}>
         <Table stickyHeader aria-label="sticky table">

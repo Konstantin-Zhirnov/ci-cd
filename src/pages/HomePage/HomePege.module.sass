@@ -1,36 +1,25 @@
-.container
-  padding: 16px
-  row-gap: 16px
-  display: flex
-  flex-direction: column
+.link
+  width: 80px
 
-  h1
-    margin-bottom: 0
+.cards
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr))
+  gap: 24px
+  margin: 0
+  padding: 0 16px
 
-  p
-    margin-top: 0
+  .card
+    padding: 16px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
 
-  .link
-    width: 80px
+    h3
+      margin-top: 0
+      padding-left: 16px
 
-  .cards
-    display: grid
-    gap: 24px
-    margin: 0
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr))
+    .divider
+      margin-bottom: 16px
 
-    .card
-      padding: 16px
-      display: flex
-      flex-direction: column
-      justify-content: space-between
-
-      h3
-        margin-top: 0
-        padding-left: 16px
-
-      .divider
-        margin-bottom: 16px
-
-      p
-        padding-left: 16px
+    p
+      padding-left: 16px

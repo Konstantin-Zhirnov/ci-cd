@@ -8,6 +8,7 @@ import { VariablesFunctionType } from '../../../../types/todos.type'
 import DeleteButton from '../../../../Components/DeleteButton'
 
 import classes from './TodoItem.module.sass'
+import MotionCard from '../../../../Components/MotionCard'
 
 interface IProps {
   id: number
@@ -17,16 +18,17 @@ interface IProps {
   age: number
   onToggle: VariablesFunctionType
   onDelete: VariablesFunctionType
+  index: number
 }
 
 const TodoItem: React.FC<IProps> = React.memo(
-  ({ id, title, completed, name, age, onToggle, onDelete }) => {
+  ({ id, title, completed, name, age, onToggle, onDelete, index }) => {
     const memoizedCallback = React.useCallback(() => {
       onDelete({ variables: { id } })
     }, [])
 
     return (
-      <Card className={classes.li} component="li">
+      <MotionCard custom={index}>
         <div className={classes.container}>
           <FormControlLabel
             control={
@@ -56,7 +58,7 @@ const TodoItem: React.FC<IProps> = React.memo(
             <span>age:</span> {age}
           </p>
         </div>
-      </Card>
+      </MotionCard>
     )
   },
 )
