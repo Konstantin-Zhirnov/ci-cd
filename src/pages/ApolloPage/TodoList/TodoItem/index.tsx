@@ -1,14 +1,13 @@
 import React from 'react'
-import Card from '@mui/material/Card'
 import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
 import { VariablesFunctionType } from '../../../../types/todos.type'
 
 import DeleteButton from '../../../../Components/DeleteButton'
+import MotionCard from '../../../../Components/MotionCard'
 
 import classes from './TodoItem.module.sass'
-import MotionCard from '../../../../Components/MotionCard'
 
 interface IProps {
   id: number
