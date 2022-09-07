@@ -6,8 +6,11 @@ import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 
 import InformationAboutPage from '../../Components/InformationAboutPage'
+import ExternalLinkButton from '../../Components/ExternalLinkButton'
 import MotionCard from '../../Components/MotionCard'
 import LinkButton from '../../Components/LinkButton'
+
+import Image from './lotto.jpg'
 
 import classes from './HomePege.module.sass'
 
@@ -122,6 +125,25 @@ const HomePage = () => {
           </CardContent>
           <CardActions>
             <LinkButton link="/image" title="Go to page" />
+          </CardActions>
+        </MotionCard>
+
+        <MotionCard custom={6}>
+          <CardContent>
+            <h3>Lotto 6 x 45</h3>
+            <Divider className={classes.divider} />
+            <img src={Image} alt="lotto" className={classes.image} />
+            <p>
+              Lotto 6 x 45 app implemented using <strong>React</strong> and{' '}
+              <strong>Redux toolkit</strong>.
+            </p>
+          </CardContent>
+          <CardActions>
+            <ExternalLinkButton link="https://clever-cuchufli-1bf760.netlify.app/" title="Deploy" />
+            <ExternalLinkButton
+              link="https://github.com/Konstantin-Zhirnov/react-6-45/"
+              title="GitHub"
+            />
           </CardActions>
         </MotionCard>
       </motion.ul>
