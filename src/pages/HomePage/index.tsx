@@ -10,7 +10,9 @@ import ExternalLinkButton from '../../Components/ExternalLinkButton'
 import MotionCard from '../../Components/MotionCard'
 import LinkButton from '../../Components/LinkButton'
 
-import Image from './lotto.jpg'
+import Lotto from './lotto.jpg'
+import ETM from './etm.jpg'
+import Events from './events.jpg'
 
 import classes from './HomePege.module.sass'
 
@@ -132,7 +134,7 @@ const HomePage = () => {
           <CardContent>
             <h3>Lotto 6 x 45</h3>
             <Divider className={classes.divider} />
-            <img src={Image} alt="lotto" className={classes.image} />
+            <img src={Lotto} alt="lotto" className={classes.image} />
             <p>
               Lotto 6 x 45 app implemented using <strong>React</strong> and{' '}
               <strong>Redux toolkit</strong>.
@@ -144,6 +146,40 @@ const HomePage = () => {
               link="https://github.com/Konstantin-Zhirnov/react-6-45/"
               title="GitHub"
             />
+          </CardActions>
+        </MotionCard>
+
+        <MotionCard custom={6}>
+          <CardContent>
+            <h3>ETM</h3>
+            <Divider className={classes.divider} />
+            <img src={ETM} alt="ETM" className={classes.image} />
+            <p>
+              <p>
+                This application combines an <strong>online store</strong> and <strong>b2b</strong>.
+                During development, the following were used:{' '}
+                <strong>React, Next, Material-UI, Node.js, Express</strong>.
+              </p>
+            </p>
+          </CardContent>
+          <CardActions>
+            <ExternalLinkButton link="https://www.etm.ru/ipro3" title="Link" />
+          </CardActions>
+        </MotionCard>
+
+        <MotionCard custom={6}>
+          <CardContent>
+            <h3>ETM Events</h3>
+            <Divider className={classes.divider} />
+            <img src={Events} alt="Events" className={classes.image} />
+            <p>
+              This information portal is designed to display information about upcoming and past
+              exhibitions. During development, the following were used:{' '}
+              <strong>React, Next, Redux toolkit, Material-UI</strong>.
+            </p>
+          </CardContent>
+          <CardActions>
+            <ExternalLinkButton link="https://skills.etm.ru/" title="Link" />
           </CardActions>
         </MotionCard>
       </motion.ul>
