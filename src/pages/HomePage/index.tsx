@@ -149,7 +149,7 @@ const HomePage = () => {
           </CardActions>
         </MotionCard>
 
-        <MotionCard custom={6}>
+        <MotionCard custom={7}>
           <CardContent>
             <h3>ETM</h3>
             <Divider className={classes.divider} />
@@ -167,7 +167,7 @@ const HomePage = () => {
           </CardActions>
         </MotionCard>
 
-        <MotionCard custom={6}>
+        <MotionCard custom={8}>
           <CardContent>
             <h3>ETM Events</h3>
             <Divider className={classes.divider} />
