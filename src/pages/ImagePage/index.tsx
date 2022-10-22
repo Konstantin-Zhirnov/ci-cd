@@ -3,8 +3,8 @@ import React from 'react'
 import InformationAboutPage from '../../Components/InformationAboutPage'
 import ImageComponent from './ImageComponent'
 
-import vancouverSM from './images/vancouver-small.jpg'
-import Vancouver from './images/vancouver-big.jpg'
+import vancouverSM from '../../images/vancouver-small.jpg'
+import Vancouver from '../../images/vancouver-big.jpg'
 
 const ImagePage: React.FC = () => {
   return (
