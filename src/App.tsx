@@ -1,5 +1,10 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from 'react-router-dom'
 
 import Layout from './Components/Layout'
 import HomePage from './pages/HomePage'
@@ -11,8 +16,8 @@ import ImagePage from './pages/ImagePage'
 import ApolloPage from './pages/ApolloPage'
 
 function App() {
-  return (
-    <Routes>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="/posts" element={<PostsPage />} />
@@ -21,9 +26,10 @@ function App() {
         <Route path={`/comments/:id`} element={<CommentPage />} />
         <Route path="/image" element={<ImagePage />} />
         <Route path="/apollo" element={<ApolloPage />} />
-      </Route>
-    </Routes>
+      </Route>,
+    ),
   )
+  return <RouterProvider router={router} />
 }
 
 export default App

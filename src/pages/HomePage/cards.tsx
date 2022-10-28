@@ -108,20 +108,20 @@ export const cards = [
       </>
     ),
   },
-  {
-    title: 'ETM',
-    content: (
-      <>
-        <img src={ETM} alt="ETM" className={classes.image} />
-        <p>
-          This application combines an <strong>online store</strong> and <strong>b2b</strong>.
-          During development, the following were used:{' '}
-          <strong>React, Next, Material-UI, Node.js, Express</strong>.
-        </p>
-      </>
-    ),
-    actions: <ExternalLinkButton link="https://www.etm.ru/ipro3" title="Link" />,
-  },
+  // {
+  //   title: 'ETM',
+  //   content: (
+  //     <>
+  //       <img src={ETM} alt="ETM" className={classes.image} />
+  //       <p>
+  //         This application combines an <strong>online store</strong> and <strong>b2b</strong>.
+  //         During development, the following were used:{' '}
+  //         <strong>React, Next, Material-UI, Node.js, Express</strong>.
+  //       </p>
+  //     </>
+  //   ),
+  //   actions: <ExternalLinkButton link="https://www.etm.ru/ipro3" title="Link" />,
+  // },
   {
     title: 'ETM Events',
     content: (
