@@ -5,7 +5,7 @@ import LinkButton from '../../Components/LinkButton'
 
 import Events from '../../images/events.jpg'
 import Lotto from '../../images/lotto.jpg'
-import ETM from '../../images/etm.jpg'
+// import ETM from '../../images/etm.jpg'
 
 import classes from './HomePege.module.sass'
 
