@@ -124,7 +124,7 @@ export const cards = [
     actions: <ExternalLinkButton link="https://skills.etm.ru/" title="Link" />,
   },
   {
-    title: 'ETM',
+    title: 'ETM - IPro3',
     content: (
       <>
         <img src={ETM} alt="ETM" className={classes.image} />
