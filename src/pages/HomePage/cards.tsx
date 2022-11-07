@@ -5,7 +5,8 @@ import LinkButton from '../../Components/LinkButton'
 
 import Events from '../../images/events.jpg'
 import Lotto from '../../images/lotto.jpg'
-// import ETM from '../../images/etm.jpg'
+import ETM from '../../images/etm.jpg'
+import OpenTable from '../../images/open-table.jpg'
 
 import classes from './HomePege.module.sass'
 
@@ -108,20 +109,21 @@ export const cards = [
       </>
     ),
   },
-  // {
-  //   title: 'ETM',
-  //   content: (
-  //     <>
-  //       <img src={ETM} alt="ETM" className={classes.image} />
-  //       <p>
-  //         This application combines an <strong>online store</strong> and <strong>b2b</strong>.
-  //         During development, the following were used:{' '}
-  //         <strong>React, Next, Material-UI, Node.js, Express</strong>.
-  //       </p>
-  //     </>
-  //   ),
-  //   actions: <ExternalLinkButton link="https://www.etm.ru/ipro3" title="Link" />,
-  // },
+  {
+    title: 'ETM',
+    content: (
+      <>
+        <img src={ETM} alt="ETM" className={classes.image} />
+        <p>
+          This application combines an <strong>online store</strong> and <strong>b2b</strong>.
+          During development, the following were used:{' '}
+          <strong>React, Next, Material-UI, Node.js, Express</strong>.
+        </p>
+        <p>Available if you are in Russia or when using a VPN</p>
+      </>
+    ),
+    actions: <ExternalLinkButton link="https://www.etm.ru/ipro3" title="Link" />,
+  },
   {
     title: 'ETM Events',
     content: (
@@ -135,5 +137,25 @@ export const cards = [
       </>
     ),
     actions: <ExternalLinkButton link="https://skills.etm.ru/" title="Link" />,
+  },
+  {
+    title: 'Test task',
+    content: (
+      <>
+        <img src={OpenTable} alt="Events" className={classes.image} />
+        <p>
+          A test task for an interesting company: <strong>React, Redux toolkit</strong>.
+        </p>
+      </>
+    ),
+    actions: (
+      <>
+        <ExternalLinkButton link="https://sweet-ganache-708fa2.netlify.app/" title="Deploy" />
+        <ExternalLinkButton
+          link="https://github.com/Konstantin-Zhirnov/open-table"
+          title="GitHub"
+        />
+      </>
+    ),
   },
 ]
