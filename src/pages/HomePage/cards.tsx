@@ -7,6 +7,7 @@ import Events from '../../images/events.jpg'
 import Lotto from '../../images/lotto.jpg'
 import ETM from '../../images/etm.jpg'
 import OpenTable from '../../images/open-table.jpg'
+import Countries from '../../images/countries.jpg'
 
 import classes from './HomePege.module.sass'
 
@@ -110,6 +111,46 @@ export const cards = [
     ),
   },
   {
+    title: 'Styled-components',
+    content: (
+      <>
+        <img src={Countries} alt="Styled-components" className={classes.image} />
+        <p>
+          This app implemented using: <strong>React, Styled-components, Cypress</strong>.
+        </p>
+      </>
+    ),
+    actions: (
+      <>
+        <ExternalLinkButton link="https://comfy-lollipop-21cac6.netlify.app/" title="Deploy" />
+        <ExternalLinkButton
+          link="https://github.com/Konstantin-Zhirnov/styled-components"
+          title="GitHub"
+        />
+      </>
+    ),
+  },
+  {
+    title: 'Test task',
+    content: (
+      <>
+        <img src={OpenTable} alt="Events" className={classes.image} />
+        <p>
+          A test task for an interesting company: <strong>React, Redux toolkit</strong>.
+        </p>
+      </>
+    ),
+    actions: (
+      <>
+        <ExternalLinkButton link="https://sweet-ganache-708fa2.netlify.app/" title="Deploy" />
+        <ExternalLinkButton
+          link="https://github.com/Konstantin-Zhirnov/open-table"
+          title="GitHub"
+        />
+      </>
+    ),
+  },
+  {
     title: 'ETM Events',
     content: (
       <>
@@ -139,25 +180,5 @@ export const cards = [
       </>
     ),
     actions: <ExternalLinkButton link="https://www.etm.ru/ipro3" title="Link" />,
-  },
-  {
-    title: 'Test task',
-    content: (
-      <>
-        <img src={OpenTable} alt="Events" className={classes.image} />
-        <p>
-          A test task for an interesting company: <strong>React, Redux toolkit</strong>.
-        </p>
-      </>
-    ),
-    actions: (
-      <>
-        <ExternalLinkButton link="https://sweet-ganache-708fa2.netlify.app/" title="Deploy" />
-        <ExternalLinkButton
-          link="https://github.com/Konstantin-Zhirnov/open-table"
-          title="GitHub"
-        />
-      </>
-    ),
   },
 ]
