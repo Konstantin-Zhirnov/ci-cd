@@ -38,7 +38,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "lint": "npx eslint ./src"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +61,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^13.3.0",
-    "eslint": "^8.18.0"
+    "eslint": "^8.0.0",
+    "eslint-config-react-app": "^7.0.1"
   }
 }
