@@ -34,6 +34,10 @@ const HomePage: React.FC = () => {
           using the Material-UI library. CI/CD is carried out through the application of: github.com
           and netlify.com
         </p>
+        <p>
+          Authorization was made using the JWT token and confirmation by email. The server is
+          written in Node.js, Express using MongoDB.
+        </p>
         <Link
           href="https://github.com/Konstantin-Zhirnov/ci-cd"
           target="_blank"
