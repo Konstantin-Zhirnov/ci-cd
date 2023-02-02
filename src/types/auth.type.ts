@@ -1,6 +1,7 @@
 export type AuthorizationStateType = {
   isAuth: boolean
   message: string
+  checkAuthMessage: string
   user: UserType
 }
 

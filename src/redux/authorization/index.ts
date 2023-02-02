@@ -13,6 +13,7 @@ import { RootState } from '../store'
 const initialState: AuthorizationStateType = {
   isAuth: false,
   message: '',
+  checkAuthMessage: '',
   user: {
     email: '',
     isActivated: false,
@@ -69,7 +70,7 @@ export const authorization = createSlice({
         state.isAuth = true
       })
       .addCase(fetchCheckAuth.rejected, (state, action) => {
-        state.message = (action.payload as string) ?? ''
+        state.checkAuthMessage = (action.payload as string) ?? ''
       })
 
       .addCase(fetchActivationEmail.pending, pending)

@@ -40,6 +40,7 @@ $api.interceptors.response.use(
         .then(({ data }) => localStorage.setItem('token', data.accessToken))
       return $api.request(originalRequest)
     }
+    throw error
   },
 )
 
