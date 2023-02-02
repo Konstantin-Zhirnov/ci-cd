@@ -4,6 +4,13 @@ export type UsersStateType = {
   message: string
   isUsersLoading: boolean
   isCurrentUserLoading: boolean
+  allUsersMongoDB: UsersMongoDBType[]
+}
+
+export type UsersMongoDBType = {
+  email: string
+  isActivated: boolean
+  id: string
 }
 
 type userAddressGeoType = Record<'lat' | 'lng', string>

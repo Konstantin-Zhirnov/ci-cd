@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { fetchGetUsers, fetchGetUser } from './asyncActions'
+import { fetchGetUsers, fetchGetUser, fetchAllUsersMongoDB } from './asyncActions'
 import { UsersStateType, UserType } from '../../types/users.type'
 import { RootState } from '../store'
 
@@ -10,6 +10,7 @@ const initialState: UsersStateType = {
   message: '',
   isUsersLoading: false,
   isCurrentUserLoading: false,
+  allUsersMongoDB: [],
 }
 
 export const users = createSlice({
@@ -37,6 +38,14 @@ export const users = createSlice({
         state.message = action.error.message ?? ''
         state.isCurrentUserLoading = false
       })
+
+      .addCase(fetchAllUsersMongoDB.pending, pendingAllUsersMongoDB)
+      .addCase(fetchAllUsersMongoDB.fulfilled, (state, action) => {
+        state.allUsersMongoDB = action.payload
+      })
+      .addCase(fetchAllUsersMongoDB.rejected, (state, action) => {
+        state.message = action.error.message ?? ''
+      })
   },
 })
 
@@ -47,6 +56,10 @@ function pendingAllPoke(state: UsersStateType) {
 
 function pendingUser(state: UsersStateType) {
   state.isCurrentUserLoading = true
+  state.message = ''
+}
+
+function pendingAllUsersMongoDB(state: UsersStateType) {
   state.message = ''
 }
 

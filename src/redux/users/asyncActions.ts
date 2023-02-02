@@ -31,3 +31,18 @@ export const fetchGetUser = createAsyncThunk(
     }
   },
 )
+
+export const fetchAllUsersMongoDB = createAsyncThunk(
+  'users/fetchAllUsersMongoDB',
+  async function (_, { rejectWithValue }) {
+    try {
+      return await UsersApi.getAllUsersMongoDB()
+    } catch (error) {
+      if (error instanceof Error) {
+        return rejectWithValue(error.message)
+      } else {
+        return rejectWithValue(error)
+      }
+    }
+  },
+)

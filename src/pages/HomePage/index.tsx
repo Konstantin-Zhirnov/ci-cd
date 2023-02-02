@@ -1,9 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-
+import { useParams } from 'react-router-dom'
 import { Divider, Link } from '@mui/material'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
+
+import { useAppDispatch } from '../../redux/hooks'
+import { fetchActivationEmail } from '../../redux/authorization/asyncActions'
 
 import InformationAboutPage from '../../Components/InformationAboutPage'
 import MotionCard from '../../Components/MotionCard'
@@ -12,6 +15,16 @@ import { cards } from './cards'
 import classes from './HomePege.module.sass'
 
 const HomePage: React.FC = () => {
+  const dispatch = useAppDispatch()
+
+  const { link } = useParams()
+
+  React.useEffect(() => {
+    if (link) {
+      dispatch(fetchActivationEmail(link))
+    }
+  }, [link])
+
   return (
     <div className={classes.container}>
       <InformationAboutPage>

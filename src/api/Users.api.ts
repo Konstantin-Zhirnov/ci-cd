@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+import $api from '../api'
+
 import { apiConfig } from './index'
-import { UserType } from '../types/users.type'
+import { UsersMongoDBType, UserType } from '../types/users.type'
 
 export const UsersApi = {
   getUsers(): Promise<UserType[]> {
@@ -10,5 +12,8 @@ export const UsersApi = {
   getUser(id: number): Promise<UserType> {
     const url = `${apiConfig.users}/${id}`
     return axios.get(url).then(({ data }) => data)
+  },
+  getAllUsersMongoDB(): Promise<UsersMongoDBType[]> {
+    return $api.get(apiConfig.usersMongoDB).then(({ data }) => data)
   },
 }

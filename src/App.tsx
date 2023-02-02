@@ -20,6 +20,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
+        <Route path="/:link" element={<HomePage />} />
         <Route path="/posts" element={<PostsPage />} />
         <Route path="/users" element={<UsersPage />} />
         <Route path="/comments" element={<CommentsPage />} />

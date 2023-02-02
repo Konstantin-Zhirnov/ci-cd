@@ -8,12 +8,14 @@ import { store } from './redux'
 import App from './App'
 
 import './index.sass'
+import { ToastContainer } from 'react-toastify'
 
 const root = createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <Provider store={store}>
     <ApolloProvider client={client}>
       <App />
+      <ToastContainer />
     </ApolloProvider>
   </Provider>,
 )
