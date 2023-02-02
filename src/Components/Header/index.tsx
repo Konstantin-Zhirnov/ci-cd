@@ -19,7 +19,7 @@ import classes from './Header.module.sass'
 
 const Header: React.FC = () => {
   const message = useAppSelector(getMessage)
-  const { isDesktop, isTablet, isMobile } = useMatchMedia()
+  const { isDesktop, isMobile } = useMatchMedia()
   const getMenu = () => (isMobile ? <MobileMenu /> : <Links />)
 
   React.useEffect(() => {
