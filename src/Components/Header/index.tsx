@@ -46,7 +46,7 @@ const Header: React.FC = () => {
           <Typography className={classes.title}>CI/CD</Typography>
           {getMenu()}
 
-          {(isDesktop || isTablet) && <Auth />}
+          {isDesktop && <Auth />}
         </Toolbar>
       </Container>
     </AppBar>
