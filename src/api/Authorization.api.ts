@@ -18,7 +18,7 @@ export const AuthorizationApi = {
   },
 
   checkAuth(): Promise<AuthResponseType> {
-    return axios.get(apiConfig.refresh).then(({ data }) => data)
+    return axios.get(apiConfig.refresh, { withCredentials: true }).then(({ data }) => data)
   },
 
   activationEmail(link): Promise<UserType> {
