@@ -2,11 +2,12 @@ import axios from 'axios'
 import { AuthResponseType } from '../types/auth.type'
 
 const BaseURL = 'https://jsonplaceholder.typicode.com'
+const PostsURL = 'https://posts-server-tau.vercel.app'
 const AuthURL = 'https://jwt-express-server.vercel.app/api'
 
 export const apiConfig = {
   users: BaseURL + '/users',
-  posts: BaseURL + '/posts',
+  posts: PostsURL + '/posts',
   comments: BaseURL + '/comments',
   login: AuthURL + '/login',
   logout: AuthURL + '/logout',

@@ -9,8 +9,7 @@ export const postsApi = createApi({
   baseQuery: fetchBaseQuery(),
   endpoints: (build) => ({
     getPosts: build.query({
-      query: (limit) =>
-        `${apiConfig.posts}${limit && limit !== 'All' ? `?_start=0&_limit=${limit}` : ''} `,
+      query: (limit) => `${apiConfig.posts}${limit && limit !== 'All' ? `?limit=${limit}` : ''} `,
       providesTags: (result) =>
         result
           ? [
