@@ -1,6 +1,6 @@
 export type PostType = {
   userId: number
-  id: number
+  _id: number
   title: string
   body: string
 }

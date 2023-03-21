@@ -22,11 +22,11 @@ const Post: React.FC<IProps> = React.memo(({ post, index }) => {
   const [deletePost] = useDeletePostMutation()
 
   const memoizedCallback = React.useCallback(async () => {
-    await deletePost(post.id).unwrap()
+    await deletePost(post._id).unwrap()
   }, [])
 
   return (
-    <MotionCard custom={index} dataTestId={`post-${post.id}`}>
+    <MotionCard custom={index} dataTestId={`post-${post._id}`}>
       <CardContent>
         <Typography className={classes.title}>{post.title}</Typography>
         <Divider className={classes.divider} />

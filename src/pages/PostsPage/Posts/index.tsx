@@ -18,7 +18,7 @@ const Posts: React.FC<IProps> = React.memo(({ posts }) => {
   const { isMobile } = useMatchMedia()
 
   const renderItem = (item: PostType, index?: number) => (
-    <Post key={item.id} post={item} index={index || 0} />
+    <Post key={item._id} post={item} index={index || 0} />
   )
 
   return (
