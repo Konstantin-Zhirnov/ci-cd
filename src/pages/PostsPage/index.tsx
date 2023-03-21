@@ -27,15 +27,12 @@ const PostPage: React.FC = () => {
           The Posts page uses <strong>RTK QUERY</strong> with the ability to add and delete a post.
         </p>
         <p>
-          Requests work fine, only there are responses from <strong>«jsonplaceholder»</strong> that
-          are peculiar.
-        </p>
-        <p>
           Also on this page, a filter is implemented by the number of displayed posts and content.
         </p>
         <p>
-          The <strong>«framer-motion»</strong> library is used to animate the display of posts
+          The <strong>«framer-motion»</strong> library is used to animate the display of posts.
         </p>
+        <p>I also wrote the server part for this application, I use Node.js and express.</p>
       </InformationAboutPage>
       <PostsPanel count={count} setCount={setCount} data={data} setPosts={setPosts} />
 
