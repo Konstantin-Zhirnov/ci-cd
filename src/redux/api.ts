@@ -13,7 +13,7 @@ export const postsApi = createApi({
       providesTags: (result) =>
         result
           ? [
-              ...result.map(({ id }: PostType) => ({ type: 'Posts', id })),
+              ...result.map(({ _id }: PostType) => ({ type: 'Posts', _id })),
               { type: 'Posts', id: 'LIST' },
             ]
           : [{ type: 'Posts', id: 'LIST' }],
