@@ -32,7 +32,10 @@ const PostPage: React.FC = () => {
         <p>
           The <strong>«framer-motion»</strong> library is used to animate the display of posts.
         </p>
-        <p>I also wrote the server part for this application, I use Node.js and express.</p>
+        <p>
+          The server part for this application (REST API) was also written by me using{' '}
+          <strong>Node.js</strong> and <strong>Express</strong>.
+        </p>
       </InformationAboutPage>
       <PostsPanel count={count} setCount={setCount} data={data} setPosts={setPosts} />
 

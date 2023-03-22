@@ -8,6 +8,7 @@ import Lotto from '../../images/lotto.jpg'
 import ETM from '../../images/etm.jpg'
 import OpenTable from '../../images/open-table.jpg'
 import Countries from '../../images/countries.jpg'
+import Grid from '../../images/grid.jpg'
 
 import classes from './HomePege.module.sass'
 
@@ -56,14 +57,14 @@ export const cards = [
           The Posts page uses <strong>RTK QUERY</strong> with the ability to add and delete a post.
         </p>
         <p>
-          Requests work fine, only there are responses from <strong>«jsonplaceholder»</strong> that
-          are peculiar.
-        </p>
-        <p>
           Also on this page, a filter is implemented by the number of displayed posts and content.
         </p>
         <p>
           The <strong>«framer-motion»</strong> library is used to animate the display of posts
+        </p>
+        <p>
+          The server part for this application (REST API) was also written by me using{' '}
+          <strong>Node.js</strong> and <strong>Express</strong>.
         </p>
       </>
     ),
@@ -88,6 +89,27 @@ export const cards = [
     title: 'Image page',
     content: <p>On the Image page, a lazy loading of an image of a huge size is carried out.</p>,
     actions: <LinkButton link="/image" title="Go to page" />,
+  },
+  {
+    title: 'AG Grid React',
+    content: (
+      <>
+        <img src={Grid} alt="AG Grid React" className={classes.image} />
+        <p>
+          React is an application using the <strong>AG Grid React library</strong>. It implements a
+          custom filter for the <strong>Age</strong> field.
+        </p>
+      </>
+    ),
+    actions: (
+      <>
+        <ExternalLinkButton link="https://ag-grid-react-kappa.vercel.app/" title="Deploy" />
+        <ExternalLinkButton
+          link="https://github.com/Konstantin-Zhirnov/ag-grid-react"
+          title="GitHub"
+        />
+      </>
+    ),
   },
   {
     title: 'Lotto 6 x 45',
