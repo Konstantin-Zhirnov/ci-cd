@@ -97,7 +97,7 @@ export const cards = [
         <img src={Grid} alt="AG Grid React" className={classes.image} />
         <p>
           React is an application using the <strong>AG Grid React library</strong>. It implements a
-          custom filter for the <strong>Age</strong> field.
+          custom filter and custom floating filter for the <strong>Age</strong> field.
         </p>
       </>
     ),
