@@ -138,7 +138,7 @@ export const cards = [
       <>
         <img src={Countries} alt="Styled-components" className={classes.image} />
         <p>
-          This app implemented using: <strong>React, Styled-components, Cypress</strong>.
+          This app implemented using: <strong>React, Styled-components, Cypress.</strong>
         </p>
       </>
     ),
