@@ -153,12 +153,12 @@ export const cards = [
     ),
   },
   {
-    title: 'Test task for "Open table"',
+    title: 'Test task for «Open table»',
     content: (
       <>
         <img src={OpenTable} alt="Events" className={classes.image} />
         <p>
-          The test task received at the interview with the company "Open table":{' '}
+          The test task received at the interview with the company «Open table»:{' '}
           <strong>React, Redux toolkit</strong>.
         </p>
       </>
