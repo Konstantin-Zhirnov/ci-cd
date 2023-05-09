@@ -10,7 +10,7 @@ import Button from '@mui/material/Button'
 import Modal from '@mui/material/Modal'
 import Box from '@mui/material/Box'
 
-import { useAddPostMutation } from '../../../api'
+import { useAddPostMutation } from '../../../../../entities'
 import { FormInputsType } from '../../../types'
 
 import classes from './AddPostModal.module.sass'

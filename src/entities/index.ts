@@ -34,7 +34,7 @@ export { MobileMenu }
 import { postsApi } from './Posts/api'
 export { postsApi }
 
-import AddPost from './Posts/components/AddPost'
+import AddPost from '../features/AddPost/components/AddPost'
 export { AddPost }
 
 import PostsList from './Posts/components/PostsList'
@@ -48,6 +48,9 @@ export type { PostType }
 
 import { useGetPostsQuery } from './Posts/api'
 export { useGetPostsQuery }
+
+import { useAddPostMutation } from './Posts/api'
+export { useAddPostMutation }
 
 import usersReducer from './User/model/slice'
 export { usersReducer }
