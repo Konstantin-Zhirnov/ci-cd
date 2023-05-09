@@ -19,8 +19,8 @@ interface IProps {
 
 const ApolloTodoItem: React.FC<IProps> = React.memo(
   ({ id, title, completed, name, age, index }) => {
-    const [toggleTodo, { error: updateError }] = useMutation(UPDATE_TODO)
-    const [removeTodo, { error: deleteError }] = useMutation(DELETE_TODO, {
+    const [toggleTodo] = useMutation(UPDATE_TODO)
+    const [removeTodo] = useMutation(DELETE_TODO, {
       refetchQueries: [{ query: ALL_TODOS }],
     })
 

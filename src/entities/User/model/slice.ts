@@ -51,10 +51,6 @@ function pendingUser(state: UsersStateType) {
   state.message = ''
 }
 
-function pendingAllUsersMongoDB(state: UsersStateType) {
-  state.message = ''
-}
-
 export const getUsers = (state: RootState): UserType[] => state.users.users
 export const getUser = (state: RootState): UserType | null => state.users.user
 export const getUsersLoading = (state: RootState): boolean => state.users.isUsersLoading
