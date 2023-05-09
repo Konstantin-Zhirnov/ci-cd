@@ -1,6 +1,5 @@
 This React application is a set of implemented functionality written in TypeScript and using
-the Material-UI library. CI/CD is carried out through the application of: github.com and
-netlify.com
+the Material-UI library. During the development of this application, an architectural methodology was used for the design of frontend applications - Feature-Sliced Design (FSD). CI/CD is carried out through the application of: github.com and vercel.com
 
 
 # Posts page:
