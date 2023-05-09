@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
-import Typography from '@mui/material/Typography/Typography'
+import Typography from '@mui/material/Typography'
 import MenuItem from '@mui/material/MenuItem'
 
 import classes from './PostsPanelSelect.module.sass'

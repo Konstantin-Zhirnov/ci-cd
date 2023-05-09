@@ -2,8 +2,8 @@ import React from 'react'
 
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
-import Typography from '@mui/material/Typography'
-import { Divider } from '@mui/material'
+
+import { Divider, Typography } from '@mui/material'
 
 import { useDeletePostMutation } from '../../../api'
 import { PostType } from '../../../types'
