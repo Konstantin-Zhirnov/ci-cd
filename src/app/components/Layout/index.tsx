@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../../index'
@@ -24,7 +24,9 @@ const Layout = () => {
       {(isUsersLoading || isCommentsLoading) && <Loader />}
 
       <Header />
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </>
   )
 }

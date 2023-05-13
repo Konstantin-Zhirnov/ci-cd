@@ -2,9 +2,7 @@ import React from 'react'
 
 import { ExternalLinkButton, LinkButton } from '../../../shared'
 
-import Events from './assets/events.jpg'
 import Lotto from './assets/lotto.jpg'
-import ETM from './assets/etm.jpg'
 import OpenTable from './assets/open-table.jpg'
 import Countries from './assets/countries.jpg'
 import Grid from './assets/grid.jpg'
@@ -169,36 +167,5 @@ export const cards = [
         />
       </>
     ),
-  },
-  {
-    title: 'ETM Events',
-    content: (
-      <>
-        <img src={Events} alt="Events" />
-        <p>
-          This information portal is designed to display information about upcoming and past
-          exhibitions. During development, the following were used:{' '}
-          <strong>React, Next, Redux toolkit, Material-UI</strong>.
-        </p>
-      </>
-    ),
-    actions: <ExternalLinkButton link="https://skills.etm.ru/" title="Link" />,
-  },
-  {
-    title: 'ETM - IPro3',
-    content: (
-      <>
-        <img src={ETM} alt="ETM" />
-        <p>
-          This application combines an <strong>online store</strong> and <strong>b2b</strong>.
-          During development, the following were used:{' '}
-          <strong>React, Next, Material-UI, Node.js, Express</strong>.
-        </p>
-        <p>
-          Available if you are in <strong>Russia</strong> or when using a <strong>VPN</strong>
-        </p>
-      </>
-    ),
-    actions: <ExternalLinkButton link="https://www.etm.ru/ipro3" title="Link" />,
   },
 ]

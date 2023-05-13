@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import {
   Route,
   createBrowserRouter,
@@ -7,13 +7,13 @@ import {
 } from 'react-router-dom'
 
 import Layout from './Layout'
-import HomePage from '../../pages/HomePage'
-import PostsPage from '../../pages/PostsPage'
-import UsersPage from '../../pages/UsersPage'
-import CommentsPage from '../../pages/CommentsPage'
-import CommentPage from '../../pages/CommentPage'
-import ImagePage from '../../pages/ImagePage'
-import ApolloPage from '../../pages/ApolloPage'
+const HomePage = lazy(() => import('../../pages/HomePage'))
+const PostsPage = lazy(() => import('../../pages/PostsPage'))
+const UsersPage = lazy(() => import('../../pages/UsersPage'))
+const CommentsPage = lazy(() => import('../../pages/CommentsPage'))
+const CommentPage = lazy(() => import('../../pages/CommentPage'))
+const ImagePage = lazy(() => import('../../pages/ImagePage'))
+const ApolloPage = lazy(() => import('../../pages/ApolloPage'))
 
 const App = () => {
   const router = createBrowserRouter(
