@@ -6,6 +6,7 @@ import Lotto from './assets/lotto.jpg'
 import OpenTable from './assets/open-table.jpg'
 import Countries from './assets/countries.jpg'
 import Grid from './assets/grid.jpg'
+import Green from './assets/green.jpg'
 
 export const cards = [
   {
@@ -151,7 +152,7 @@ export const cards = [
     title: 'Test task for «Open table»',
     content: (
       <>
-        <img src={OpenTable} alt="Events" />
+        <img src={OpenTable} alt="Open table" />
         <p>
           The test task received at the interview with the company «Open table»:{' '}
           <strong>React, Redux toolkit</strong>.
@@ -165,6 +166,25 @@ export const cards = [
           link="https://github.com/Konstantin-Zhirnov/open-table"
           title="GitHub"
         />
+      </>
+    ),
+  },
+  {
+    title: 'Test task for «Green API»',
+    content: (
+      <>
+        <img src={Green} alt="Green API" />
+        <p>
+          The test task received at the interview with the company «Green API»:{' '}
+          <strong>React, Redux toolkit, RTK Query</strong>. You need idInstance and apiTokenInstance
+          (green-api.com).
+        </p>
+      </>
+    ),
+    actions: (
+      <>
+        <ExternalLinkButton link="https://green-api-wheat.vercel.app/" title="Deploy" />
+        <ExternalLinkButton link="https://github.com/Konstantin-Zhirnov/green-api" title="GitHub" />
       </>
     ),
   },
